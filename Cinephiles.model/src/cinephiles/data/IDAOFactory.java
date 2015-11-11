@@ -4,7 +4,7 @@
  */
 package cinephiles.data;
 
-import data.interfaces.IUserList;
+import cinephiles.data.interfaces.IUserList;
 
 /**
  *

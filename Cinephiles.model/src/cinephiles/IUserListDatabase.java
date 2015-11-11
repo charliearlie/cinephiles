@@ -4,8 +4,8 @@
  */
 package cinephiles;
 
-import data.interfaces.IUserList;
-import data.model.User;
+import cinephiles.data.interfaces.IUserList;
+import cinephiles.data.model.User;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;

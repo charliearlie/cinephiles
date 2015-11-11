@@ -2,7 +2,7 @@
  * Work of Charles Waite.
  * Plymouth University.
  */
-package data.model;
+package cinephiles.data.model;
 
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;

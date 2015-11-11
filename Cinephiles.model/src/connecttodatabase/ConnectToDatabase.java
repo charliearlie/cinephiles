@@ -5,8 +5,8 @@
 package connecttodatabase;
 import cinephiles.DAOFactoryDatabase;
 import cinephiles.data.DAOFactory;
-import data.interfaces.IUserList;
-import data.model.User;
+import cinephiles.data.interfaces.IUserList;
+import cinephiles.data.model.User;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.Properties;

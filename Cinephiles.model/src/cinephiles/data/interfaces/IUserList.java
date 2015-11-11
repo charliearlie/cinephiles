@@ -2,9 +2,9 @@
  * Work of Charles Waite.
  * Plymouth University.
  */
-package data.interfaces;
+package cinephiles.data.interfaces;
 
-import data.model.User;
+import cinephiles.data.model.User;
 import java.util.ArrayList;
 
 /**
