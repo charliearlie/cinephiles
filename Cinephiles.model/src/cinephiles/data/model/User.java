@@ -4,6 +4,7 @@
  */
 package cinephiles.data.model;
 
+import cinephiles.security.PasswordHandler;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 import java.util.Date;
@@ -66,14 +67,6 @@ public class User {
         this.surname = surname;
     }
 
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
     public Date getDateOfBirth() {
         return dateOfBirth;
     }
@@ -93,25 +86,23 @@ public class User {
         return joinDate;
     }
     
-//     public final boolean checkPassword(String plainTextPassword) {
-//        //TODO: Add encrypted password checking
-//        PasswordHandler passwordHandler = new PasswordHandler();
-//        return passwordHandler.checkPassword(this.password, plainTextPassword);
-//    }
-//
-//    public final String getPassword() {
-//        return this.password;
-//    }
-//
-//    public final void setPassword(String password) {
-//        //TODO: Encrypt password on setting a password
-//        PasswordHandler passwordHandler = new PasswordHandler();
-//        try {
-//            this.password = passwordHandler.hashPasswordWithRandomSalt(password);
-//        } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
-//            Logger.getLogger(Member.class.getName()).log(Level.SEVERE, null, ex);
-//        }
-//
-//        this.notifyObserver();
-//    }
+     public final boolean checkPassword(String plainTextPassword) {
+        //TODO: Add encrypted password checking
+        PasswordHandler passwordHandler = new PasswordHandler();
+        return passwordHandler.checkPassword(this.password, plainTextPassword);
+    }
+
+    public final String getPassword() {
+        return this.password;
+    }
+
+    public final void setPassword(String password) {
+        //TODO: Encrypt password on setting a password
+        PasswordHandler passwordHandler = new PasswordHandler();
+        try {
+            this.password = passwordHandler.hashPasswordWithRandomSalt(password);
+        } catch (NoSuchAlgorithmException | InvalidKeySpecException ex) {
+            Logger.getLogger(User.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
 }

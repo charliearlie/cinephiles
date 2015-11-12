@@ -6,7 +6,9 @@ package cinephiles;
 
 import cinephiles.data.interfaces.IUserList;
 import cinephiles.data.model.User;
+import java.io.ByteArrayInputStream;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,6 +24,11 @@ import java.util.logging.Logger;
 public class IUserListDatabase implements IUserList {
     
     private final String SQL_GET_ALL_USERS = "SELECT * FROM Users";
+    
+    private final String SQL_CREATE_USER = "INSERT INTO Users ("
+            + "USER_ID, USER_FORENAME, USER_SURNAME, USER_DOB, "
+            + "USER_EMAIL, USER_PASSWORD, USER_JOIN_DATE) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?)";
     
     private Connection connection;
     
@@ -59,5 +66,34 @@ public class IUserListDatabase implements IUserList {
         }
         
         return users;
+    }
+    
+    @Override
+    public User createUser(User user) {
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(SQL_CREATE_USER,
+                primaryKeys)) {
+            preparedStatement.setInt(1, user.getId());
+            preparedStatement.setString(2, user.getForename());
+            preparedStatement.setString(3, user.getSurname());
+            preparedStatement.setDate(4,
+                    new java.sql.Date(user.getDateOfBirth().getTime()));
+            preparedStatement.setString(5, user.getEmailAddress());
+            preparedStatement.setString(6, user.getPassword());
+            preparedStatement.setDate(7, 
+                    new java.sql.Date(user.getJoinDate().getTime()));
+            
+            
+            
+            preparedStatement.executeUpdate();
+
+//            ResultSet generatedKeys = preparedStatement.getGeneratedKeys();
+//            if (generatedKeys.next()) {
+//                user.setId(generatedKeys.getInt(1));
+//            }
+        } catch (SQLException ex) {
+            Logger.getLogger(IUserListDatabase.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return user;
     }
 }

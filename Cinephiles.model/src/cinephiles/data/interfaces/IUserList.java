@@ -14,6 +14,8 @@ import java.util.ArrayList;
 public interface IUserList {
     
     public ArrayList<User> getAllUsers();
+    public User createUser(User user);
+    
     
     
 }

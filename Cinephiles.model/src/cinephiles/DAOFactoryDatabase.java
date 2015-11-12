@@ -28,8 +28,8 @@ public class DAOFactoryDatabase extends DAOFactory{
                     "root", "password1");
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(
-                    "Could not find Oracle JDBC Driver"
-                    + "\nCheck if ojdbc7.jar is added as a library");
+                    "Could not find MySQL jdbc driver"
+                    + "\nCheck if it is added as a library");
         } catch (SQLException ex) {
             throw new RuntimeException(
                     "Failed to establish database connection"
@@ -39,14 +39,16 @@ public class DAOFactoryDatabase extends DAOFactory{
         if (connection != null) {
             // Create DAOObjects
             userList = new IUserListDatabase(connection);
-//            advertList = new IAdvertListDatabase(connection);
-//            advertCategoryList = new IAdvertCategoryListDatabase(connection);
-//            sessionHandler = new ISessionHandlerDatabase(connection);
         } else {
             throw new RuntimeException(
                     "Failed to instantiate class (unknown reason)"
                     + this.getClass().getName()
                     + ": couldn't connect to the database!");
         }
+    }
+    
+    @Override
+    public boolean getConnectionStatus() {
+        return (connection != null);
     }
 }

@@ -13,4 +13,6 @@ import cinephiles.data.interfaces.IUserList;
 public interface IDAOFactory {
     public IUserList getUserList();
     
+    public boolean getConnectionStatus();
+    
 }
