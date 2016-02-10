@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+ * Created by Lorenzo Koundouris on 06/11/2015.
+ * University of Plymouth
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/black"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:scrollIndicators="right"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:context=".Homepage"
+        tools:showIn="@layout/app_bar_homepage">
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="14dp"
+            android:background="@android:color/black"></android.support.v4.view.ViewPager>
+
+        <TextView
+            android:id="@+id/now_in_cinemas_title_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/view_pager"
+            android:layout_marginTop="16dp"
+            android:text="Now in Cinemas"
+            android:textColor="#E65100"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout android:id="@+id/in_cinemas_now_relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@+id/now_in_cinemas_title_textView"
+            android:background="#dddddd">
+
+            <LinearLayout
+                android:id="@+id/now_in_cinemas_imageViews_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp">
+
+                <ImageView
+                    android:id="@+id/now_in_cinemas_imageView1"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_heart_of_the_sea" />
+
+                <ImageView
+                    android:id="@+id/now_in_cinemas_imageView2"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_mi5" />
+
+
+                <ImageView
+                    android:id="@+id/now_in_cinemas_imageView3"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_star_wars" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/now_in_cinemas_textViews_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/now_in_cinemas_imageViews_linearLayout">
+
+                <TextView
+                    android:id="@+id/now_in_cinemas_textView1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Heart of the Sea" />
+
+                <TextView
+                    android:id="@+id/now_in_cinemas_textView2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="MI5" />
+
+                <TextView
+                    android:id="@+id/now_in_cinemas_textView3"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Star Wars" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/hottest_this_month_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/in_cinemas_now_relativeLayout"
+            android:layout_marginTop="16dp"
+            android:text="Hottest this month"
+            android:textColor="#E65100"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout android:id="@+id/hottest_this_month_relationalLayout"
+            android:layout_below="@+id/hottest_this_month_textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#dddddd">
+
+            <LinearLayout
+                android:id="@+id/hottest_this_month_imageViews_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/hottest_this_month_media1_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_spectre" />
+
+                <ImageView
+                    android:id="@+id/hottest_this_month_media2_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_kung_fu_panda" />
+
+                <ImageView
+                    android:id="@+id/hottest_this_month_media3_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_deadpool" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hottest_this_month_textViews_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/hottest_this_month_imageViews_linearLayout">
+
+                <TextView
+                    android:id="@+id/hottest_this_month_media1_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:editable="true"
+                    android:paddingBottom="16dp" />
+
+                <TextView
+                    android:id="@+id/hottest_this_month_media2_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Macbeth" />
+
+                <TextView
+                    android:id="@+id/hottest_this_month_media3_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Hunger Games" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/coming_out_soon_textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/hottest_this_month_relationalLayout"
+            android:layout_marginTop="16dp"
+            android:text="Coming out soon"
+            android:textColor="#E65100"
+            android:textSize="16sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout android:id="@+id/coming_out_soon_relationalLayout"
+            android:layout_below="@+id/coming_out_soon_textView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#dddddd">
+
+            <LinearLayout
+                android:id="@+id/coming_out_soon_imageViews_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/coming_out_soon_media1_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_antman" />
+
+                <ImageView
+                    android:id="@+id/coming_out_soon_media2_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_macbeth" />
+
+                <ImageView
+                    android:id="@+id/coming_out_soon_media3_imageView"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_weight="1"
+                    android:src="@drawable/ic_hunger_games" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/coming_out_soon_textViews_linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/coming_out_soon_imageViews_linearLayout">
+
+                <TextView
+                    android:id="@+id/coming_out_soon_media1_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Antman" />
+
+
+                <TextView
+                    android:id="@+id/coming_out_soon_media2_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Macbeth" />
+
+                <TextView
+                    android:id="@+id/coming_out_soon_media3_textView"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:paddingBottom="16dp"
+                    android:text="Hunger Games" />
+            </LinearLayout>
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/desktop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coming_out_soon_relationalLayout"
+            android:layout_marginTop="8dp"
+            android:layout_toLeftOf="@+id/mobile"
+            android:layout_toStartOf="@+id/mobile"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_computer_white" />
+
+        <ImageView
+            android:id="@+id/website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coming_out_soon_relationalLayout"
+            android:layout_marginTop="12dp"
+            android:layout_toEndOf="@+id/mobile"
+            android:layout_toRightOf="@+id/mobile"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_web_site_white" />
+
+        <ImageView
+            android:id="@+id/mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/coming_out_soon_relationalLayout"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="8dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_action_phone_white" />
+
+    </RelativeLayout>
+</ScrollView>

@@ -28,6 +28,7 @@ public class Config extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(xyz.cinephiles.api.MediaResource.class);
         resources.add(xyz.cinephiles.api.UsersResource.class);
     }
     
