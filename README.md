@@ -1,5 +1,7 @@
 ![alt text](http://i.imgur.com/kmcY5HV.png)
 
+**The final website and API have now been taken down.**
+
 This is a repository of Charlie Waite and Lorenzo Koundouris
 
 Project name:   Cinephile
